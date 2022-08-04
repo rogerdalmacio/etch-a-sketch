@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;500;700;800;900&display=swap');
+
+* { 
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Inconsolata', monospace;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    gap: 1em;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .5em;
+}
+
+form > button {
+    font-family: 'Inconsolata', monospace;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid black;
+    padding: .1em 1em;
+    cursor: pointer;
+}
+
+.container {
+    display: grid;  
+    grid-template-columns: repeat(16, 1fr);
+    height: 600px;
+    width: 960px;
+    gap: .1em;
+}
+
+.container > .my-grid {
+    border: 1px solid grey;
+}
+
+.hovered {
+    background-color: grey;
+}
