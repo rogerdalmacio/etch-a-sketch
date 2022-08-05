@@ -48,7 +48,3 @@ form > button {
 .container > .my-grid {
     border: 1px solid grey;
 }
-
-.hovered {
-    background-color: grey;
-}

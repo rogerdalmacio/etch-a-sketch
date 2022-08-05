@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const form = document.querySelector('#setNewGrid');
+let hue = 100;
 
 function newGridSize(gridSize) {
     for(let i = 0; i < gridSize * gridSize; i++){
@@ -12,8 +13,13 @@ function newGridSize(gridSize) {
     const myGrid = document.querySelectorAll('.my-grid');
 
     myGrid.forEach(grid => {
-    grid.addEventListener('mouseover', e => {
-        grid.classList.add('hovered');
+        grid.addEventListener('mouseover', e => {
+            const randomColor = Math.floor(Math.random()*360);
+            const randomPercent = Math.floor(Math.random()*100);
+
+            grid.style = `background-color: hsl(${randomColor}, ${randomPercent}%, ${hue}%)`;
+            if(hue != 0) hue = hue - 2;
+
     }, {once: true})
 })
 }
@@ -25,5 +31,6 @@ form.addEventListener('submit', e => {
     for(const [name,value] of data){
         gridSize = value;
     }
+    container.innerHTML = '';
     newGridSize(gridSize);
 })
