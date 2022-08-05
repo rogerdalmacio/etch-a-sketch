@@ -31,6 +31,7 @@ form.addEventListener('submit', e => {
     for(const [name,value] of data){
         gridSize = value;
     }
+    hue = 100;
     container.innerHTML = '';
     newGridSize(gridSize);
 })
